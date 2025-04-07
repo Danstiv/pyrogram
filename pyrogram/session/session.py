@@ -293,7 +293,7 @@ class Session:
                 await self.send(
                     raw.functions.PingDelayDisconnect(
                         ping_id=0, disconnect_delay=self.WAIT_TIMEOUT + 10
-                    ), False
+                    ), True
                 )
             except OSError:
                 self.client.loop.create_task(self.restart())
